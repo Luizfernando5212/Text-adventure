@@ -1,0 +1,11 @@
+Pronto para continuar seu caminho, ainda é possível observar alguns rastros no caminho
+Agora estão um pouco confusos, talvez por conta do vento que acabou camuflando os rastros antigos.
+
+Você segue o rastro até que você sem querer ativa uma armadilha, um dardo te atinge no braço.
+
+  - Acredito que esse dardo esteja envenenado, preciso fazer algo pra neutralizar o veneno rápido
+  - Vou *procurar por plantas medicinais
+
+Depois de poucos minutos você sente uma tontura, percebe que era algum tipo de alucinógeno na ponnta do dardo, as coisas começam a ficar confusas parece que algo de errado não está certo.
+
+Digite o que você faz nessa situação: 

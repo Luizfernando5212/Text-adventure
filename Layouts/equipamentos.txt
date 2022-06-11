@@ -1,0 +1,7 @@
+-------------------------------------------------------------
+  Arco + Adaga | Espada OH | Espada TH | Espada OH + Escudo
+-------------------------------------------------------------
+        1             2          3               4
+Jorge - As espadas OH são espadas leves, para serem carregadas com apenas uma mão, já as TH são pesadas, utiliza-se duss mãos, as outras são auto-explicativas.
+
+  Selecione sua opção: 

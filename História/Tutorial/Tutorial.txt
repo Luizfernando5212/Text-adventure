@@ -1,0 +1,13 @@
+O jogo funciona de maneira praticamente intuitiva, na maior parte das situações, você terá algumas escolhas para se fazer, você entendeu ?
+
+Outra mecânica possível de encontrar, será de digitar, ficará explicito quando essa mecânica for utilizada, mas preste atenção aos comandos indicados na tela, serão aceitas respostas dentro de situações específicas.
+Você entendeu ?
+Digite: 
+A terceira mecânica é a de combate, seus inimigos terão um dado de x lados, dependendo da dificuldade, e você tera um dado de 20 lados. Não se engane, para vencer um combate você precisará pontuar o dobro que seu oponente para vencê-lo.
+Tente me derrotar
+Meu resultado:
+Seu resultado:
+
+Além disso, a qualquer comento do jogo, você pode teclar "9" no seu teclado, isso pausará o jogo e lhe dará a opção de salvar seu progresso. Porém se antente, você retornará para o início da fase caso não tenha terminado, caso não queira fazer isso, seu progresso será salvo automaticamente ao fim de cada fase, mas isso você podera testar durante o jogo.
+
+Boa sorte!!

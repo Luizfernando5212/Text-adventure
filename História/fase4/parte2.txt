@@ -1,0 +1,10 @@
+A resposta está correta, você é digno de seguir esse caminho, creio que logo a frente você encontrará o que deseja.
+
+A resposta está errada, sinto muito, é aqui que seu caminho termina.
+
+Você tem uma opção:
+
+[1] - Tentar eliminar o inimigo e prosseguir.
+
+Resultado do inimigo (D20):
+Seu resultado (D20):

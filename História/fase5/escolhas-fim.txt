@@ -1,0 +1,5 @@
+Ecolha:
+
+  [1] - Poupar os saqueadores
+
+  [2] - sacrificá-los

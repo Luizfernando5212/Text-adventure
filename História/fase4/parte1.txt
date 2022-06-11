@@ -1,0 +1,14 @@
+Você consegue sair daquele estado de loucura, suas ações fazem sentido novamente, apesar de saber que perdeu algum tempo, ainda há chances de conseguir recuperar o tesouro.
+
+Ao olhar pra cima, você nota que não está tão longe do objetivo final, não devem haver tantos desafios a partir daqui.
+
+Você continua caminhando no mesmo sentido até que uma pequena casinha, e ao ouvir seus passos um ser sai dessa casa, esse ser tem uma figura interessante, não possui pernas e está flutuando, fumaças saem desse ser.
+
+  - Acredito que isso seja um espectro do Gelo, realmente ele tem a aparência de um fantasma.
+
+O espectro não age com hostilidade, porém ele tem uma pergunta para você.[
+
+Espectro - Tenho uma pergunta para ti, só com a resposta correta, te permitirei prosseguir seu caminho.
+
+Espectro - O que pode correr, mas nunca anda; tem leito, mas nunca dorme; nasce, mas não morre?
+Digite:
