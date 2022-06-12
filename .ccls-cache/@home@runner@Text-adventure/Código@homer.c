@@ -75,9 +75,23 @@ char escolha();
 char *checar(char *arquivo);
 void bancof2();
 
+/*oid *terminar(void *vargp)
+{
+  char sair;
+  do
+    {
+      sair = getch();
+    }
+  while (sair != '0');
+  exit (1);
+}*/
+
 int main() 
 {
   setlocale(LC_ALL, "");
+/*  pthread_t thread_id;
+  pthread_create(&thread_id, NULL, terminar, NULL);*/
+  
   // Delete_player();
   //load();
   //introduction();
@@ -136,7 +150,6 @@ void first_screen()
       system("clear");
       introduction();
     }
-    
     
   }
     else if (C == 'l' || C == 'L') //Se "l" leva para opção de Load game.
@@ -337,6 +350,12 @@ void createc()
 void load() 
 {
   int ver = 0, i = 0; // verificador para saber se foi encontrado o nick no arquivo de Load
+  char g;
+  printf("Pressione 'b' para voltar ou 's' para continuar.");
+  g = getch();
+  if(g == 'b')
+    first_screen();
+  system("clear");
   printf("Digite seu nick: ");
   fgets(nick, LEN_NICK, stdin);
   while(nick[i] != '\n')
@@ -472,6 +491,8 @@ int stop(char fase[], FILE *arquivo)
         system("clear");
         save(fase);
       }
+        else if (c == '0')
+          exit (1);
     else goto inicio;
   }
   return 1;
@@ -947,6 +968,7 @@ void phase3()
   fim:
   horas = horas + tempo/70;
   getch();
+  save("fase4\n");
   phase4();
 }
 
@@ -984,7 +1006,7 @@ while(strcmp(answer, "\n") == 0);//if (strcmp(answer, "\0") == 0)
       if(strcmp(answer, text) == 0)
       {
         fclose(banco);
-        break;
+        goto p1;
         //fclose(phase[3]);
       }
     }
@@ -993,7 +1015,7 @@ while(strcmp(answer, "\n") == 0);//if (strcmp(answer, "\0") == 0)
     fclose(banco);
     goto p2;
   }
-  
+  p1:
   system("clear");
   phase[3] = fopen("História/fase4/parte2.txt", "r");
   fgets(text, LEN_TEXT, phase[3]);
@@ -1043,13 +1065,13 @@ while(strcmp(answer, "\n") == 0);//if (strcmp(answer, "\0") == 0)
   {
     while(Dadoj == 0)
       {Dadoj = sorte(20);}
-    printf("%i\n", Dadoj);
+    printf("\n%i\n", Dadoj);
     getch();
-    phase5();
-    return;
   }
-  if (Dadoj > 2 * Dadoi)
+  if (Dadoj >= 2 * Dadoi)
   {
+    printf("\n Você derrotou o espectro, pode continuar seu caminho.");
+    getch();
     system("clear");
     horas += 8;
     phase5();
@@ -1058,8 +1080,9 @@ while(strcmp(answer, "\n") == 0);//if (strcmp(answer, "\0") == 0)
   else
   {
     system("clear");
-    printf("Game Over");
-    return;
+    printf("                                      GAME OVER\n");
+    getch();
+    exit (1);
   }
   fclose(phase[3]);
 }
@@ -1117,10 +1140,11 @@ void phase5()
     fclose(phase[4]);
     return;
   }
-  else if (horas > 28)
+  else if (horas > 23)
   {
     texto("História/fase5/parte1-2.txt", "fase5\n");
-    return;
+    printf("\n");
+    exit (1);
   }
   else
   {   
@@ -1162,7 +1186,6 @@ void phase5()
     if (Dadoj <= 2 * Dadoi) goto fim2;
     escolha:
     system("clear");
-    printf("1");
     while(!feof(choice))
       {
         fgets(text, LEN_TEXT, choice);
@@ -1203,7 +1226,8 @@ void phase5()
   fim2:
   system("clear");
   texto("História/fase5/parte2D.txt", "fase5\n");
-  return;
+  printf("\n");
+  exit (1);
 }
 
 void alternative()
