@@ -5,6 +5,7 @@ A resposta está errada, sinto muito, é aqui que seu caminho termina.
 Você tem uma opção:
 
 [1] - Tentar eliminar o inimigo e prosseguir.
+Digite:
 
 Resultado do inimigo (D20):
 Seu resultado (D20):

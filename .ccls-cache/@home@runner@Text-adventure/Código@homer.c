@@ -91,9 +91,9 @@ int main()
     dado = sorte(a);
     printf("%i\n", dado);*/
   //phase5();
-  //phase3();
+  phase3();
   //tutorial();
-  first_screen();
+  //first_screen();
   
   return 0;
 }
@@ -352,17 +352,16 @@ void load()
     if (strcmp(nick, arm) == 0) 
     {
       ver++;
-      // pego a próxima linha que necessariamente indica a fase em que o jogador
-      // está.
+      // pego a próxima linha que necessariamente indica a fase em que o jogador está.
       fgets(arm, LEN_A, Load);
       // Esse if manda o jogador para a fase em que ele estava.
-      printf("%s %s", nick, arm);
+     // printf("%s %s", nick, arm);
       if(strcmp(arm, "intro\n") == 0)
       {
         fgets(horass, LEN_H, Load);
+        fgets(equipment, LEN_EQP, Load);
         horas = atoi(horass);
         system("clear");
-        printf("clear");
         introduction();
       }
       else if (strcmp(arm, "fase1\n") == 0) 
@@ -423,11 +422,11 @@ void save(char fase[])
       fputs(nick, Novo_Load);
       fputs(fase, Novo_Load);
       fputs(horass, Novo_Load);
-      
-      fgets(arm, LEN_A, Load);
-      fgets(arm, LEN_A, Load);
       putc('\n', Novo_Load);
       fputs(equipment, Novo_Load);
+      fgets(arm, LEN_A, Load);
+      fgets(arm, LEN_A, Load);
+      fgets(arm, LEN_A, Load);
       ver++;
     }
   }
@@ -734,7 +733,6 @@ void phase2()
   }
   texto("História/fase2/parte1.txt", "fase2\n");
   system("clear");
-  //fclose(phase[1]);
   phase[1] = fopen("História/fase2/parte2.txt", "r");
   get:
   for(i = 1; i <= 11; i++)
@@ -896,7 +894,7 @@ void phase2()
   phase[1] = fopen("História/fase2/parte2-3.txt", "r");
   if (Dadoj >= 2 * Dadoi)
   {
-    horas += 6;
+    horas += 9;
     fgets(text, LEN_TEXT, phase[1]);
     printf("%s", text);
     stop("fase2\n", phase[1]);
@@ -906,7 +904,7 @@ void phase2()
   }
   else
   {
-    horas += 10;
+    horas += 13;
     fgets(text, LEN_TEXT, phase[1]);
     fgets(text, LEN_TEXT, phase[1]);
     fgets(text, LEN_TEXT, phase[1]);
@@ -920,17 +918,10 @@ void phase2()
 void phase3()
 {
   char C;
-  //phase[2] = fopen("História/fase3/parte1m.txt", "r");
   system("clear");
   if(strcmp(equipment, "Magia\n") == 0)
   {
     texto("História/fase3/parte1m.txt", "fase3\n");
-   /* if(feof(phase[2]))
-    {
-      fclose(phase[2]);
-      phase4();
-      return;
-     }*/
     horas += 1;
     phase4();
     return;
@@ -938,19 +929,8 @@ void phase3()
   
   phase[2] = fopen("História/fase3/parte1.txt", "r");
   texto("História/fase3/parte1.txt", "fase3\n");
-/*  for (i = 1; i <= 12 ; i++)
-    {
-      fgets(text, LEN_TEXT, phase[2]);
-    }
-  for (i = 1; i <= 11; i++)
-    {
-      fgets(text, LEN_TEXT, phase[2]);
-      printf("%s", text); 
-      stop("fase3\n", phase[2]);
-      if(i == 8)
-        system("clear");
-    }*/
   fclose(phase[2]);
+  
   phase[2] = fopen("História/fase3/parte2.txt", "r");
   system("clear");
   while(!feof(phase[2]))
@@ -965,9 +945,7 @@ void phase3()
   while(stop("fase3\n", phase[2]) != 'p')
     stop("fase4\n", phase[2]);
   fim:
-  printf("%d", tempo);
   horas = horas + tempo/70;
-  printf("\n%d", horas);
   getch();
   phase4();
 }
@@ -992,18 +970,12 @@ void phase4()
         stop("fase4\n", phase[3]);
       }
     goto Q;
-    return;
   }
   texto("História/fase4/parte1.txt", "fase4\n");
- /* while (!feof(phase[3]))
-    {
-      fgets(text, LEN_TEXT, phase[3]);
-      printf("%s", text);
-      stop("fase4\n", phase[3]);
-    }*/
-  Q:
+ Q:
+do
   fgets(answer, LEN_A, stdin);
-  //if (strcmp(answer, "\0") == 0)
+while(strcmp(answer, "\n") == 0);//if (strcmp(answer, "\0") == 0)
     //goto Q;
   banco = fopen("Banco/charada.txt", "r");
   while(!feof(banco))
@@ -1015,18 +987,11 @@ void phase4()
         goto p1;
         //fclose(phase[3]);
       }
-      if(feof(banco))
-      {
-        goto p2;
-      }
     }
   if(feof(banco))
   {
-    printf("Resposta inválida.");
-    rewind(phase[3]);
-    getch();
-    system("clear");
-    goto questão;
+    fclose(banco);
+    goto p2;
   }
   p1:
   
@@ -1036,50 +1001,58 @@ void phase4()
   printf("%s", text);
   stop("fase4\n", phase[3]);
   fclose(phase[3]);
+  horas += 4;
   phase5();
+  return;
   
   p2:
   phase[3] = fopen("História/fase4/parte2.txt", "r");
   fgets(text, LEN_TEXT, phase[3]);
   fgets(text, LEN_TEXT, phase[3]);
-  for(i = 3; i <= 7; i++)
+  for(i = 3; i <= 8; i++)
     {
     fgets(text, LEN_TEXT, phase[3]);
     printf("%s", text);
     stop("fase4\n", phase[3]);
     }
-  scanf("%i", &num);
-
-  if (num == 1)
+  do
   {
-    i = 1;
+    scanf("%i", &num);
     system("clear");
-    while(!feof(phase[3]))
-      {
-        i++;
-        fgets(text, LEN_TEXT, phase[3]);
-        printf("%s", text);
-        if (i == 3)
-        {
-          while(Dadoi == 0) 
-            {Dadoi = sorte(20);}
-          printf("%i\n", Dadoi);
-        }
-        getch();
-      }
-    if(feof(phase[3]))
+    fflush(stdin);
+    if (num != 1)
+      printf("Digite: ");
+  }
+  while (num != 1);
+
+  i = 1;
+  system("clear");
+  while(!feof(phase[3]))
     {
-      while(Dadoj == 0)
-        {Dadoj = sorte(20);}
-      printf("%i\n", Dadoj);
+      i++;
+      fgets(text, LEN_TEXT, phase[3]);
+      printf("%s", text);
+      if (i == 3)
+      {
+        while(Dadoi == 0) 
+          {Dadoi = sorte(20);}
+        printf("%i\n", Dadoi);
+      }
       getch();
-      phase5();
-      return;
     }
+  if(feof(phase[3]))
+  {
+    while(Dadoj == 0)
+      {Dadoj = sorte(20);}
+    printf("%i\n", Dadoj);
+    getch();
+    phase5();
+    return;
   }
   if (Dadoj > 2 * Dadoi)
   {
     system("clear");
+    horas += 8;
     phase5();
     return;
   }
@@ -1105,11 +1078,10 @@ void phase5()
       {
         fgets(text, LEN_TEXT, phase[4]);
         printf("%s",  text);
-        getch();
+        stop("fase5\n", phase[4]);
       }
-     escolhaa:
+    escolhaa:
     system("clear");
-    printf("1");
     while(!feof(choice))
     {
       fgets(text, LEN_TEXT, choice);
@@ -1181,11 +1153,14 @@ void phase5()
           {
             printf("%i\n", Dadoj);  
             getch();
-            if (Dadoj >= 2* Dadoi) break;
-            else goto fim2;
-          }
-        
+            if (Dadoj >= 2 * Dadoi)
+            {
+              fgets(text, LEN_TEXT, phase[4]);
+              printf("%s", text);
+            }
+          } 
       }
+    if (Dadoj <= 2 * Dadoi) goto fim2;
     escolha:
     system("clear");
     printf("1");
@@ -1199,27 +1174,29 @@ void phase5()
     switch(C)
       {
         case '1': 
-            system("clear");
-            fgets(text, LEN_TEXT, phase[4]);
-            printf("%s", text);
-            getch();
-            donut();
-            break;
+          system("clear");
+          fgets(text, LEN_TEXT, phase[4]);
+          fgets(text, LEN_TEXT, phase[4]);
+          printf("%s", text);
+          getch();
+          donut();
+          break;
         case '2':
-            system("clear");
-            fgets(text, LEN_TEXT, phase[4]);
-            fgets(text, LEN_TEXT, phase[4]);
-            printf("%s", text);
-            getch();
-            donut();
-            break;
+          system("clear");
+          fgets(text, LEN_TEXT, phase[4]);
+          fgets(text, LEN_TEXT, phase[4]);
+          fgets(text, LEN_TEXT, phase[4]);
+          printf("%s", text);
+          getch();
+          donut();
+          break;
         case 'p': case 'P': stop("", choice);break;
         default: 
-            printf("\nResposta inválida"); 
-            getch();
-            rewind(choice);
-            goto escolha; 
-            break;
+          printf("\nResposta inválida"); 
+          getch();
+          rewind(choice);
+          goto escolha; 
+          break;
       }
     fclose(phase[4]);
     fclose(choice);

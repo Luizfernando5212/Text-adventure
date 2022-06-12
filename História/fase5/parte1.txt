@@ -8,6 +8,6 @@ Reseultado do inimigo (D6):
 
 Seu resultado (D20):
 
-Seus inimigos não conseguem fazer nada para deter sua força e logo imploram por suas vidas em troca de um tremendo tesouro
+Seus inimigos não conseguem fazer nada para deter sua força e logo imploram por suas vidas em troca de um tremendo tesouro 
 Você poupa seus inimigos em troca do tesouro, e conclui sua jornada de herói! Agora fique com seu tesouro!
 Você elimina seus inimigos e colhe o tesouro de seu corpo, dessa forma conclui sua jornada de anti-herói. Agora fique com seu tesouro.
