@@ -91,9 +91,9 @@ int main()
     dado = sorte(a);
     printf("%i\n", dado);*/
   //phase5();
-  phase3();
+  //phase3();
   //tutorial();
-  //first_screen();
+  first_screen();
   
   return 0;
 }
@@ -984,7 +984,7 @@ while(strcmp(answer, "\n") == 0);//if (strcmp(answer, "\0") == 0)
       if(strcmp(answer, text) == 0)
       {
         fclose(banco);
-        goto p1;
+        break;
         //fclose(phase[3]);
       }
     }
@@ -993,7 +993,6 @@ while(strcmp(answer, "\n") == 0);//if (strcmp(answer, "\0") == 0)
     fclose(banco);
     goto p2;
   }
-  p1:
   
   system("clear");
   phase[3] = fopen("História/fase4/parte2.txt", "r");
@@ -1118,7 +1117,7 @@ void phase5()
     fclose(phase[4]);
     return;
   }
-  else if (horas > 10)
+  else if (horas > 28)
   {
     texto("História/fase5/parte1-2.txt", "fase5\n");
     return;

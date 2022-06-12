@@ -5,9 +5,11 @@ Você entendeu ?
 Digite: 
 A terceira mecânica é a de combate, seus inimigos terão um dado de x lados, dependendo da dificuldade, e você tera um dado de 20 lados. Não se engane, para vencer um combate você precisará pontuar o dobro que seu oponente para vencê-lo.
 Tente me derrotar
-Meu resultado:
-Seu resultado:
+Meu resultado (D6):
+Seu resultado (D20):
 
-Além disso, a qualquer comento do jogo, você pode teclar "9" no seu teclado, isso pausará o jogo e lhe dará a opção de salvar seu progresso. Porém se antente, você retornará para o início da fase caso não tenha terminado, caso não queira fazer isso, seu progresso será salvo automaticamente ao fim de cada fase, mas isso você podera testar durante o jogo.
+Além disso, a qualquer momento do jogo, você pode teclar "9" no seu teclado, isso pausará o jogo e lhe dará a opção de salvar seu progresso. Porém se antente, você retornará para o início da fase caso não tenha terminado, caso não queira fazer isso, seu progresso será salvo automaticamente ao fim de cada fase, mas isso você podera testar durante o jogo.
+
+A qualquer momento, você poderá apertar "0" para encerrar o jogo.
 
 Boa sorte!!
