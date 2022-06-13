@@ -91,22 +91,6 @@ int main()
   setlocale(LC_ALL, "");
 /*  pthread_t thread_id;
   pthread_create(&thread_id, NULL, terminar, NULL);*/
-  
-  // Delete_player();
-  //load();
-  //introduction();
-  //createc();
-  /*int  car = 10490;
-  printf("%d", car);
-  car = car / 70;
-  printf("\n%d",car);*/
-  //save("fase4\n");
-  /*  int sorte1;
-    dado = sorte(a);
-    printf("%i\n", dado);*/
-  //phase5();
-  //phase3();
-  //tutorial();
   first_screen();
   
   return 0;
@@ -307,7 +291,6 @@ void introduction()
   texto("História/Intro.txt", "intro\n");
   system("clear");
   phase1();
-  fclose(intro);
 }
 
 void createc() 
@@ -492,7 +475,7 @@ int stop(char fase[], FILE *arquivo)
         save(fase);
       }
         else if (c == '0')
-          exit (1);
+        {printf("\n"); exit (1);}
     else goto inicio;
   }
   return 1;
