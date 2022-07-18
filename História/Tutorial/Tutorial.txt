@@ -8,6 +8,7 @@ Tente me derrotar
 Meu resultado (D6):
 Seu resultado (D20):
 
-Além disso, a qualquer momento do jogo, você pode teclar "9" no seu teclado, isso pausará o jogo e lhe dará a opção de salvar seu progresso ou encerrar a partida. Porém se antente, você retornará para o início da fase caso não tenha terminado, caso não queira fazer isso, seu progresso será salvo automaticamente ao fim de cada fase, mas isso você podera testar durante o jogo.
+O jogo é uma corrida contra o tempo, portanto pense nas suas escolhas, se não der sorte você não conseguirá concluir a jornada.
+Além disso, a qualquer momento do jogo, você pode teclar "9" no seu teclado, isso pausará o jogo e lhe dará a opção de salvar seu progresso ou encerrar a partida. Porém se atente, você retornará para o início da fase caso não tenha terminado, caso não queira fazer isso, seu progresso será salvo automaticamente ao fim de cada fase, mas isso você podera testar durante o jogo.
 
 Boa sorte!!

@@ -4,13 +4,13 @@ Jorge - Para começar essa jornada sei que precisará de equipamentos
 
 , venha comigo, te mostrarei o caminho.
 
-O guardião te leva por um corredor suspeito e com pouca iluminação, em volta você vê   diversos frascos com conteúdo desconhecido...
+O guardião te leva por um corredor suspeito e com pouca iluminação, em volta você vê diversos frascos com conteúdo desconhecido...
 Ao caminhar pelo corredor inteiro, existe uma porta, com três trancas diferentes, e o  senhor abre uma a uma.
 
 Jorge - Aqui temos alguns dos melhores equipamentos que alguém poderia encontrar, e é a partir dessa sala que você escolherá que tipo de herói você será nesta missão.
 
-Entrando na sala, um ambiente totalmente diferente, completamente iluminado, alguns    baús espalhados pela sala e na parede localizada ao lado esquerdo...
+Entrando na sala, um ambiente totalmente diferente, completamente iluminado, alguns baús espalhados pela sala e na parede localizada ao lado esquerdo...
 É possível ver as opções de armas que você poderá utilizar.
 
-Jorge - Aqui! Nesta parede você pode escolher seu equipamento, porém apenas um deles,  não existe chance de troca e este será o equipamento utilizado durante toda a sua      jornada, os outros ficarão por aqui.
+Jorge - Aqui! Nesta parede você pode escolher seu equipamento, porém apenas um deles,  não existe chance de troca e este será o equipamento utilizado durante toda a sua jornada, os outros ficarão por aqui.
       - Gostaria de escolher seu equipamento? 

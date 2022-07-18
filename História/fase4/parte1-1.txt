@@ -1,0 +1,5 @@
+Espectro - O que pode correr, mas nunca anda; tem leito, mas nunca dorme; nasce, mas não morre?
+[1] - O Rio
+[2] - O Sol
+[3] - A Morte
+Digite: 

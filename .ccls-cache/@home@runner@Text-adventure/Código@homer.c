@@ -38,13 +38,13 @@ char text[LEN_TEXT];
 char nick[LEN_NICK];
 char answer[LEN_ANS];
 char player[LEN_NICK];
-char equipment[LEN_EQP] = "arco";
+char equipment[LEN_EQP];
 char arm[LEN_A];
 char *result;
 int i = 0;
 int a, b;
 int Dadoi = 0, Dadoj = 0;
-int vida = 3;
+//int vida = 3;
 char teste;
 int horas = 0;
 char horass[LEN_H];
@@ -66,6 +66,7 @@ void phase1();
 void phase2();
 void phase3();
 void phase4();
+int parte1();
 void phase5();
 void fim();
 void alternative();
@@ -75,24 +76,10 @@ char escolha();
 char *checar(char *arquivo);
 void bancof2();
 
-/*oid *terminar(void *vargp)
-{
-  char sair;
-  do
-    {
-      sair = getch();
-    }
-  while (sair != '0');
-  exit (1);
-}*/
-
 int main() 
 {
   setlocale(LC_ALL, "");
-/*  pthread_t thread_id;
-  pthread_create(&thread_id, NULL, terminar, NULL);*/
   first_screen();
-  
   return 0;
 }
 
@@ -100,7 +87,6 @@ int sorte(int num)
 {
   srand(time(NULL));
   num = rand() % num;
-  // printf ("%i", num);
   return num;
 }
 
@@ -311,6 +297,7 @@ void createc()
       fgets(arm, LEN_A, jogadores);
       if (strcmp(nick, arm) == 0) {
         printf("nick já existe, tente outro\n");
+        getch();
         rewind(jogadores);
         system("clear");
         goto seunick;
@@ -381,6 +368,14 @@ void load()
         fgets(equipment, LEN_EQP,Load);
         system("clear");
         phase2();
+      }
+        else if (strcmp(arm, "fase3\n") == 0) 
+      {
+        fgets(horass, LEN_H, Load);
+        horas = atoi(horass);
+        fgets(equipment, LEN_EQP,Load);
+        system("clear");
+        phase3();
       }
       else if (strcmp(arm, "fase4\n") == 0)
       {
@@ -572,10 +567,6 @@ void phase1()
   phase[0] = fopen("História/fase1/parte2-2.txt", "r");
   question:
   pt2s = fopen("Layouts/equipamentos.txt", "r");
-  /*if (strcmp(answer, "\0") != 0)
-  {
-    printf("- Gostaria de escolher seu equipamento ?");
-  }*/
   printf("\nDigite: ");
   fgets(answer, LEN_ANS, stdin);
   system("clear");
@@ -960,7 +951,7 @@ void phase4()
   setbuf(stdin, 0);
   int Dadoi = 0; Dadoj = 0;
   int i = 1;
-  int num;
+  int num, num2;
   phase[3] = fopen("História/fase4/parte1.txt", "r");
   questão:
   system("clear");
@@ -1010,6 +1001,11 @@ while(strcmp(answer, "\n") == 0);//if (strcmp(answer, "\0") == 0)
   return;
   
   p2:
+  printf("Você errou, tem apenas mais uma chance.");
+  getch();
+  if((num2 = parte1()) == 1)
+    goto p1;
+  
   phase[3] = fopen("História/fase4/parte2.txt", "r");
   fgets(text, LEN_TEXT, phase[3]);
   fgets(text, LEN_TEXT, phase[3]);
@@ -1063,11 +1059,39 @@ while(strcmp(answer, "\n") == 0);//if (strcmp(answer, "\0") == 0)
   else
   {
     system("clear");
+    printf("\n Você não derrotou o espectro.\n");
     printf("                                      GAME OVER\n");
     getch();
     exit (1);
   }
   fclose(phase[3]);
+}
+
+int parte1()
+{
+  FILE *arq;
+  int ver;
+  system("clear");
+  arq = fopen("História/fase4/parte1-1.txt", "r");
+  while(!feof(arq))
+    {
+      fgets(text, LEN_TEXT, arq);
+      printf("%s", text);
+    }
+  scanf("%i", &ver);
+  switch(ver)
+    {
+      case 1: break;
+      case 2: return 2; break;
+      case 3: return 2; break;
+      default: 
+        {
+          printf("Resposta inválida.");
+          getch();
+          parte1();
+        }
+    }
+  return 1;
 }
 
 void phase5()
@@ -1123,7 +1147,7 @@ void phase5()
     fclose(phase[4]);
     return;
   }
-  else if (horas > 23)
+  else if (horas > 24)
   {
     texto("História/fase5/parte1-2.txt", "fase5\n");
     printf("\n");
@@ -1180,7 +1204,7 @@ void phase5()
       {
         case '1': 
           system("clear");
-          fgets(text, LEN_TEXT, phase[4]);
+          //fgets(text, LEN_TEXT, phase[4]);
           fgets(text, LEN_TEXT, phase[4]);
           printf("%s", text);
           getch();
@@ -1188,7 +1212,7 @@ void phase5()
           break;
         case '2':
           system("clear");
-          fgets(text, LEN_TEXT, phase[4]);
+        //  fgets(text, LEN_TEXT, phase[4]);
           fgets(text, LEN_TEXT, phase[4]);
           fgets(text, LEN_TEXT, phase[4]);
           printf("%s", text);
@@ -1266,6 +1290,7 @@ void alternative()
   fclose(choice);
 }
 
+//Função que abre um arquivo
 void texto(char caminho[LEN_TEXT], char fase[])
 {
   FILE *pont_arq;
@@ -1339,6 +1364,7 @@ char getch(void)
     return buf;
  }
 
+// Função que converte inteiro em String
 char* itoa(int num, char* buffer, int base)   
 {  
   int current = 0;  
@@ -1375,6 +1401,7 @@ char* itoa(int num, char* buffer, int base)
   return buffer;  
 }  
 
+// Função do final do jogo
 int donut()
 {
   float A = 0, B = 0;
